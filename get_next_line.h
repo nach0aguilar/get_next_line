@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:32 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/19 12:47:10 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/19 16:37:34 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 # include <stdlib.h>
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 1983
+#endif
 
 char    *get_next_line(int fd);
-size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(char *str);
+char	*ft_strjoin(char *s1, char *s2);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t count, size_t size);
 
-#endif
 #endif
 
