@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:38 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/20 11:39:52 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/20 13:46:14 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,23 @@
 
 char	*ft_readbuffer(int fd, char *container)
 {
+    int     bytes;
 	char	*buffer;
-
+    
+    bytes = 1;
 	buffer = calloc(BUFFER_SIZE + 1, sizeof(char));
-	read(fd, buffer, BUFFER_SIZE);
-	container = ft_strjoin(container, buffer);
+    while (!ft_strchr(container, '\n') && bytes != 0)
+    {
+        bytes = read(fd, buffer, BUFFER_SIZE);
+        if (bytes == -1)
+        {
+            free(buffer);
+            free(container);
+            return (0);
+        }
+        buffer[bytes] = 0;
+        container = ft_strjoin(container, buffer);
+    }
 	free(buffer);
 	return (container);
 }
@@ -43,12 +55,17 @@ char	*ft_deleteline(char *container)
 	int		i;
 	int		j;
 
-	newcontainer = calloc(BUFFER_SIZE + 1 - ft_lenline(container),
+	newcontainer = calloc(BUFFER_SIZE - ft_lenline(container),
 			sizeof(char));
 	i = ft_lenline(container) + 1;
 	j = 0;
 	while (container[i])
 		newcontainer[j++] = container[i++];
+    if (!newcontainer)
+    {
+        free(newcontainer);
+        return (0);
+    }
 	newcontainer[j] = 0;
 	free(container);
 	return (newcontainer);
@@ -61,7 +78,7 @@ char	*ft_newline(char *container)
 
     if (!container)
 		return (0);
-	line = calloc(ft_lenline(container) + 1, sizeof(char));
+	line = calloc(ft_lenline(container) + 2, sizeof(char));
 	i = 0;
 	while (container[i] && container[i] != '\n')
 	{
@@ -84,6 +101,11 @@ char	*get_next_line(int fd)
 		return (0);
 	line = ft_newline(container);
 	container = ft_deleteline(container);
+    if (!line || !*line)
+    {
+        free(line);
+        return(0);
+    }
 	return (line);
 }
 

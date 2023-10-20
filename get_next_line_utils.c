@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:41 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/20 10:06:41 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/20 13:15:19 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,31 @@ char	*ft_strjoin(char *s1, char *s2)
 	new[i] = '\0';
 	free(s1);
 	return (new);
+}
+
+char	*ft_strchr(char *s, int c)
+{
+	int		i;
+	char	*newstring;
+	char	chr;
+
+	i = 0;
+	chr = (char)c;
+	newstring = (char *)s;
+	if (!s)
+		return (0);
+	if (c == '\0')
+		return (newstring);
+	while (s[i])
+	{
+		if (s[i] == chr)
+			return (&newstring[i]);
+		else
+			i++;
+	}
+	if (newstring[i] == chr)
+		return (&newstring[i]);
+	return (0);
 }
 
 void	ft_bzero(void *s, size_t n)
