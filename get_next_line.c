@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:38 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/20 10:33:51 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:39:52 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ char	*ft_newline(char *container)
 	int		i;
 	char	*line;
 
-	line = calloc(ft_lenline(container) + 1, sizeof(char));
-	if (!line)
+    if (!container)
 		return (0);
+	line = calloc(ft_lenline(container) + 1, sizeof(char));
 	i = 0;
 	while (container[i] && container[i] != '\n')
 	{
@@ -78,7 +78,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
+		return (0);
 	container = ft_readbuffer(fd, container);
 	if (!container)
 		return (0);
@@ -90,6 +90,9 @@ char	*get_next_line(int fd)
 int main()
 {
     int fd = open("archivo.txt", O_RDONLY);
+    printf("%s\n", get_next_line(fd));
+    printf("%s\n", get_next_line(fd));
+    printf("%s\n", get_next_line(fd));
     printf("%s\n", get_next_line(fd));
     printf("%s\n", get_next_line(fd));
     printf("%s\n", get_next_line(fd));
