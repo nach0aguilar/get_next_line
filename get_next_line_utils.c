@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:41 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/19 17:33:30 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:06:41 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	i = -1;
 	j = 0;
-    if(!s1)
-    {
-        s1 = malloc(sizeof(char) * 1);
-        s1[0] = '\0';
-    }
+	if (!s1)
+	{
+		s1 = malloc(sizeof(char) * 1);
+		s1[0] = '\0';
+	}
 	newlen = ft_strlen(s1) + ft_strlen(s2);
 	new = malloc(sizeof(char) * newlen + 1);
 	if (!new)
@@ -45,7 +45,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[j])
 		new[i++] = s2[j++];
 	new[i] = '\0';
-    free(s1);
+	free(s1);
 	return (new);
 }
 
