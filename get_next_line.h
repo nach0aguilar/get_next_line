@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:32 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/20 15:58:15 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:46:56 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ char	*get_next_line(int fd);
 size_t	ft_strlen(char *str);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(char *s, int c);
+char	*ft_readbuffer(int fd, char *container);
+char	*ft_deleteline(char *container);
+char	*ft_newline(char *container);
 
 #endif
