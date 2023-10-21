@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:38 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/21 20:04:41 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/21 20:06:43 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_readbuffer(int fd, char *container)
 {
@@ -93,16 +93,16 @@ char	*ft_newline(char *container)
 
 char	*get_next_line(int fd)
 {
-	static char	*container;
+	static char	*container[4096];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	container = ft_readbuffer(fd, container);
-	if (!container)
+	container[fd] = ft_readbuffer(fd, container[fd]);
+	if (!container[fd])
 		return (0);
-	line = ft_newline(container);
-	container = ft_deleteline(container);
+	line = ft_newline(container[fd]);
+	container[fd] = ft_deleteline(container[fd]);
 	if (!line || !*line)
 	{
 		free(line);
