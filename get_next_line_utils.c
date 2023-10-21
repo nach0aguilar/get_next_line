@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:41 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/20 13:15:19 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:58:04 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,27 +72,4 @@ char	*ft_strchr(char *s, int c)
 	if (newstring[i] == chr)
 		return (&newstring[i]);
 	return (0);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)s)[i] = 0;
-		i++;
-	}
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*pointer;
-
-	pointer = malloc(count * size);
-	if (pointer == NULL)
-		return (pointer);
-	ft_bzero(pointer, count * size);
-	return (pointer);
 }
