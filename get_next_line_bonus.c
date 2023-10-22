@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:38 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/21 20:06:43 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/22 14:56:30 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char	*ft_newline(char *container)
 
 char	*get_next_line(int fd)
 {
-	static char	*container[4096];
+	static char	*container[2828];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
@@ -113,11 +113,19 @@ char	*get_next_line(int fd)
 
 // int	main(void)
 // {
-// 	int fd = open("archivo.txt", O_RDONLY);
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	close(fd);
+// 	int fd1 = open("archivo1.txt", O_RDONLY);
+// 	int fd2 = open("archivo2.txt", O_RDONLY);
+// 	int fd3 = open("archivo3.txt", O_RDONLY);
+
+// 	printf("%s", get_next_line(fd1));
+// 	printf("%s", get_next_line(fd2));
+// 	printf("%s", get_next_line(fd3));
+
+// 	printf("%s", get_next_line(fd1));
+// 	printf("%s", get_next_line(fd2));
+// 	printf("%s", get_next_line(fd3));
+
+// 	close(fd1);
+// 	close(fd2);
+// 	close(fd3);
 // }

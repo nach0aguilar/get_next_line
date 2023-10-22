@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:32 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/21 20:07:34 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/22 14:38:12 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1983
+#  define BUFFER_SIZE 42
 # endif
 
 char	*get_next_line(int fd);
