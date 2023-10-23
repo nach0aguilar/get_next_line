@@ -6,14 +6,13 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:32 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/22 14:38:12 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/23 08:45:09 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 # include <fcntl.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # ifndef BUFFER_SIZE

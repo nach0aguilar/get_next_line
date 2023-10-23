@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:38 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/22 15:03:58 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/23 08:44:37 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,14 +110,3 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-
-// int	main(void)
-// {
-// 	int fd = open("archivo.txt", O_RDONLY);
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	close(fd);
-// }

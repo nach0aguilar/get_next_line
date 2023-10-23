@@ -6,7 +6,7 @@
 /*   By: igaguila <igaguila@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:14:38 by igaguila          #+#    #+#             */
-/*   Updated: 2023/10/22 14:56:30 by igaguila         ###   ########.fr       */
+/*   Updated: 2023/10/23 08:47:02 by igaguila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,22 +110,3 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-
-// int	main(void)
-// {
-// 	int fd1 = open("archivo1.txt", O_RDONLY);
-// 	int fd2 = open("archivo2.txt", O_RDONLY);
-// 	int fd3 = open("archivo3.txt", O_RDONLY);
-
-// 	printf("%s", get_next_line(fd1));
-// 	printf("%s", get_next_line(fd2));
-// 	printf("%s", get_next_line(fd3));
-
-// 	printf("%s", get_next_line(fd1));
-// 	printf("%s", get_next_line(fd2));
-// 	printf("%s", get_next_line(fd3));
-
-// 	close(fd1);
-// 	close(fd2);
-// 	close(fd3);
-// }
